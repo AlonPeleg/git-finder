@@ -1,20 +1,25 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const UserItem = ({ user }) => {
+const UserItem = ({ user: { login, avatar_url, html_url } }) => {
   return (
     <div className="card text-center">
       <img
-        src={user.avatar_url}
+        src={avatar_url}
         className="round-img"
         style={{ width: 60 }}
         alt="userPic"
       />
-      <h3>{user.login}</h3>
-      <a href={user.html_url} className="btn btn-dark btn-sm my-1">
+      <h3>{login}</h3>
+      <a href={html_url} className="btn btn-dark btn-sm my-1">
         More
       </a>
     </div>
   );
+};
+
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired
 };
 
 export default UserItem;
