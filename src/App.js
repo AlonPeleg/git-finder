@@ -5,7 +5,7 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <Navbar icon="fab fa-github" />
+      <Navbar title="GitFind" icon="fab fa-github" />
     </div>
   );
 };
