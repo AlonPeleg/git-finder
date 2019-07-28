@@ -14,7 +14,7 @@ const App = () => {
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [alert, setAlertState] = useState(null);
+  const [alert, setAlert] = useState(null);
 
   // Search users and add them to state
   const searchUsers = async text => {
@@ -61,10 +61,10 @@ const App = () => {
     setLoading(false);
   };
 
-  const setAlert = (msg, type) => {
-    setAlertState({ msg, type });
+  const showAlert = (msg, type) => {
+    setAlert({ msg, type });
 
-    setTimeout(() => setAlertState(null), 5000);
+    setTimeout(() => setAlert(null), 5000);
   };
 
   return (
@@ -83,7 +83,7 @@ const App = () => {
                     searchUsers={searchUsers}
                     clearUsers={clearUsers}
                     showClear={users.length ? true : false}
-                    setAlert={setAlert}
+                    setAlert={showAlert}
                   />
                   <Users loading={loading} users={users} />
                 </Fragment>
