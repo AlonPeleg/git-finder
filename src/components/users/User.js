@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Badges from "./Badges";
 import Repos from "../repos/Repos";
-import PersonalInfo from './PersonalInfo'
-import Bio from './Bio'
+import PersonalInfo from "./PersonalInfo";
+import PersonalImg from "./PersonalImg";
+import Bio from "./Bio";
 
 class User extends Component {
   componentDidMount() {
@@ -53,19 +54,14 @@ class User extends Component {
           <i className="fas fa-times-circle text-danger" />
         )}
         <div className="card grid-2">
-          <div className="all-center">
-            <img
-              src={avatar_url}
-              alt=""
-              className="round-img"
-              style={{ width: 150 }}
-            />
-            <h1>{name}</h1>
-            <p>location: {location}</p>
-          </div>
+          <PersonalImg
+            avatar_url={avatar_url}
+            name={name}
+            location={location}
+          />
           <div>
-            <Bio bio={bio} html_url={html_url}/>
-            <PersonalInfo login={login} company={company} blog={blog}/>
+            <Bio bio={bio} html_url={html_url} />
+            <PersonalInfo login={login} company={company} blog={blog} />
           </div>
         </div>
         <Badges
