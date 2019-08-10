@@ -1,4 +1,4 @@
-Udemy Project 
+React Project using hooks.
 
 URL to website : https://git-hub-finder.netlify.com/
 
